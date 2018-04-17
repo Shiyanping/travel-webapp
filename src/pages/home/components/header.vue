@@ -1,13 +1,13 @@
 <template>
 <div class="header">
   <div class="header-left">
-    <span class="iconfont back-icon">&#xe624;</span>
+    <span class="iconfont back-icon icon-fanhui"></span>
   </div>
   <div class="header-input">
-    <span class="iconfont">&#xe632;</span>请输入城市/景点/游玩主题
+    <span class="iconfont icon-sousuo"></span>请输入城市/景点/游玩主题
   </div>
   <div class="header-right">
-    城市 <span class="iconfont">&#xe64a;</span>
+    城市 <span class="iconfont icon-jiantou"></span>
   </div>
 </div>
 </template>
