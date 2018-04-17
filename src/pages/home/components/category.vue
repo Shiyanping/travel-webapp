@@ -86,10 +86,10 @@ export default {
   @import '~@css/varibles.styl'
   @import '~@css/mixins.styl'
   .cate-content >>> .swiper-pagination-bullet-active
-    background: rgba(0,175,190,.8)!important
+    background rgba(0,175,190,.8)!important
   .cate-content >>> .swiper-pagination-bullet
-    width: 6px
-    height: 6px
+    width 6px
+    height 6px
   .cate-content >>> .swiper-container
     height 100%
   .cate-content

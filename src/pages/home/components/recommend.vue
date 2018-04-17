@@ -3,13 +3,13 @@
   <div class="title">
     <span class="iconfont icon-xin"></span> 猜你喜欢
   </div>
-  <ul class="rec-list">
-    <li class="ren-item border-bottom" v-for="item of categoryList" :key="item.id">
+  <ul class="list">
+    <li class="item border-bottom" v-for="item of categoryList" :key="item.id">
       <img :src="item.img" alt="">
-      <div class="rec-item-detail">
-        <p class="rec-item-title" v-text="item.name"></p>
-        <p class="rec-item-comment" v-text="item.commentCount + '条评论'"></p>
-        <div class="open-ren-item">
+      <div class="item-detail">
+        <p class="item-title" v-text="item.name"></p>
+        <p class="item-comment" v-text="item.commentCount + '条评论'"></p>
+        <div class="open-item">
           <span v-text="item.position"></span>
           <div>查看详情 <span class="iconfont icon-right"></span></div>
         </div>
@@ -79,46 +79,46 @@ export default {
     background #fff
     .title
       padding .24rem 0
-      height: .44rem
-      color: #212121
-      font-size: .32rem
-      line-height: .44rem
+      height .44rem
+      color #212121
+      font-size .32rem
+      line-height .44rem
       .icon-xin
-        margin-right: .04rem
-        width: .3rem
-        height: .3rem
-        margin-left: .2rem
+        margin-right .04rem
+        width .3rem
+        height .3rem
+        margin-left .2rem
         color #ff5a58
-    .rec-list
-      margin-left: .24rem
-      .ren-item
+    .list
+      margin-left .24rem
+      .item
         display flex
-        overflow: hidden
-        padding: .2rem 0
+        overflow hidden
+        padding .2rem 0
         > img
-          width: 2rem
-          height: 2rem
-        .rec-item-detail
+          width 2rem
+          height 2rem
+        .item-detail
           flex 1
           padding-left .22rem
-          .rec-item-title
-            margin-top: .26rem
-            height: .44rem
+          .item-title
+            margin-top .26rem
+            height .44rem
             color $fontBlackColor
-            font-size: .32rem
-            line-height: .44rem
-          .rec-item-comment
-            margin-top: .14rem
-            height: .34rem
-            color: #616161
-            font-size: .24rem
+            font-size .32rem
+            line-height .44rem
+          .item-comment
+            margin-top .14rem
+            height .34rem
+            color $subFontBlackColor
+            font-size .24rem
             line-height .34rem
-          .open-ren-item
+          .open-item
             display flex
-            margin-top: .22rem
-            color: #616161
-            font-size: .24rem
-            height: .4rem
+            margin-top .22rem
+            color $subFontBlackColor
+            font-size .24rem
+            height .4rem
             line-height .4rem
             justify-content space-between
             align-items center
