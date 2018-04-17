@@ -7,14 +7,20 @@
     <span class="iconfont icon-sousuo"></span>请输入城市/景点/游玩主题
   </div>
   <div class="header-right">
-    城市 <span class="iconfont icon-jiantou"></span>
+    {{city}} <span class="iconfont icon-jiantou"></span>
   </div>
 </div>
 </template>
 
 <script>
 export default {
-  name: 'HomeHeader'
+  name: 'HomeHeader',
+  props: {
+    'city': {
+      default: '城市',
+      type: String
+    }
+  }
 }
 </script>
 
