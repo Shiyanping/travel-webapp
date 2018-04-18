@@ -15,7 +15,8 @@ module.exports = {
         target: 'http://localhost:8080',
         changeOrigin: true,
         pathRewrite: {
-          '/api/indexInfo': '/static/mock/index.json'
+          '/api/indexInfo': '/static/mock/index.json',
+          '/api/city': '/static/mock/city.json'
         }
       },
     },

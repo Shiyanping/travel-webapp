@@ -10,62 +10,25 @@
         </ul>
       </div>
       <div class="area">
-        <div class="title border-topbottom">当前城市</div>
+        <div class="title border-topbottom">热门城市</div>
         <ul class="city-list">
-          <li class="city-wrapper">
-            <a href="javascript:void(0)" class="city-button">北京</a>
-          </li>
-          <li class="city-wrapper">
-            <a href="javascript:void(0)" class="city-button">北京</a>
-          </li>
-          <li class="city-wrapper">
-            <a href="javascript:void(0)" class="city-button">北京</a>
-          </li>
-          <li class="city-wrapper">
-            <a href="javascript:void(0)" class="city-button">北京</a>
-          </li>
-          <li class="city-wrapper">
-            <a href="javascript:void(0)" class="city-button">北京</a>
+          <li class="city-wrapper" v-for="item of hot" :key="item.id">
+            <a href="javascript:void(0)" class="city-button">{{item.name}}</a>
           </li>
         </ul>
       </div>
-      <div class="area">
-        <div class="title border-topbottom">A</div>
+      <div
+        class="area"
+        v-for="(item, key) of cities"
+        :key="key"
+        :ref="key">
+        <div class="title border-topbottom">{{key}}</div>
         <ul class="scroll-list">
-          <li class="list-item border-bottom">
-            阿拉善
-          </li>
-          <li class="list-item border-bottom">
-            阿拉善
-          </li>
-          <li class="list-item border-bottom">
-            阿拉善
-          </li>
-          <li class="list-item border-bottom">
-            阿拉善
-          </li>
-          <li class="list-item border-bottom">
-            阿拉善
-          </li>
-        </ul>
-      </div>
-      <div class="area">
-        <div class="title border-topbottom">B</div>
-        <ul class="scroll-list">
-          <li class="list-item border-bottom">
-            阿拉善
-          </li>
-          <li class="list-item border-bottom">
-            阿拉善
-          </li>
-          <li class="list-item border-bottom">
-            阿拉善
-          </li>
-          <li class="list-item border-bottom">
-            阿拉善
-          </li>
-          <li class="list-item border-bottom">
-            阿拉善
+          <li
+            class="list-item border-bottom"
+            v-for="cityItem of item"
+            :key="cityItem.id">
+            {{cityItem.name}}
           </li>
         </ul>
       </div>
@@ -77,10 +40,23 @@
 import BScroll from 'better-scroll'
 export default {
   name: 'list',
+  props: {
+    cities: Object,
+    hot: Array,
+    letter: String
+  },
   mounted () {
     this.$nextTick(() => {
       this.scroll = new BScroll(this.$refs.wrapper, {})
     })
+  },
+  watch: {
+    letter () {
+      if (this.letter !== '') {
+        let element = this.$refs[this.letter][0]
+        this.scroll.scrollToElement(element)
+      }
+    }
   }
 }
 </script>
