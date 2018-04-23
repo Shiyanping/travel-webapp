@@ -17,17 +17,10 @@
           </li>
         </ul>
       </div>
-      <div
-        class="area"
-        v-for="(item, key) of cities"
-        :key="key"
-        :ref="key">
+      <div class="area" v-for="(item, key) of cities" :key="key" :ref="key">
         <div class="title border-topbottom">{{key}}</div>
         <ul class="scroll-list">
-          <li
-            class="list-item border-bottom"
-            v-for="cityItem of item"
-            :key="cityItem.id">
+          <li class="list-item border-bottom" v-for="cityItem of item" :key="cityItem.id">
             {{cityItem.name}}
           </li>
         </ul>
@@ -37,7 +30,7 @@
 </template>
 
 <script>
-import BScroll from 'better-scroll'
+import BScroll from 'better-scroll';
 export default {
   name: 'list',
   props: {
@@ -45,63 +38,73 @@ export default {
     hot: Array,
     letter: String
   },
-  mounted () {
+  mounted() {
     this.$nextTick(() => {
-      this.scroll = new BScroll(this.$refs.wrapper, {})
-    })
+      this.scroll = new BScroll(this.$refs.wrapper, {});
+    });
   },
   watch: {
-    letter () {
+    letter() {
       if (this.letter !== '') {
-        let element = this.$refs[this.letter][0]
-        this.scroll.scrollToElement(element)
+        let element = this.$refs[this.letter][0];
+        this.scroll.scrollToElement(element);
       }
     }
   }
-}
+};
 </script>
 
 <style lang="stylus" scoped>
-  @import '~@css/varibles.styl'
-  .border-topbottom
-    &:before
-      background-color #ccc
-    &:after
-      background-color #ccc
-  .border-bottom
-    &:before
-      background-color #eee
-  .list
-    position absolute
-    top 1.8rem
-    right 0
-    bottom 0
-    left 0
+@import '~@css/varibles.styl'
+
+.border-topbottom
+  &:before
+    background-color #ccc
+
+  &:after
+    background-color #ccc
+
+.border-bottom
+  &:before
+    background-color #eee
+
+.list
+  position absolute
+  top 1.8rem
+  right 0
+  bottom 0
+  left 0
+  overflow hidden
+
+  .title
+    padding 0.24rem 0.3rem
+    color $fontBlackColor
+    font-size 0.24rem
+    background #f5f5f5
+
+  .city-list
     overflow hidden
-    .title
-      padding .24rem .3rem
-      color $fontBlackColor
-      font-size .24rem
-      background #f5f5f5
-    .city-list
-      overflow hidden
-      padding .2rem .6rem 0 .2rem
-      .city-wrapper
-        float left
-        width 33.3%
-        margin-bottom .2rem
-        .city-button
-          display block
-          padding .1rem
-          color $fontBlackColor
-          border .02rem solid #ccc
-          text-align center
-          border-radius .08rem
-          margin-right .2rem
-    .scroll-list
-      overflow hidden
-      .list-item
-        height .6rem
-        line-height .6rem
-        padding .1rem .6rem .1rem .2rem
+    padding 0.2rem 0.6rem 0 0.2rem
+
+    .city-wrapper
+      float left
+      width 33.3%
+      margin-bottom 0.2rem
+
+      .city-button
+        display block
+        padding 0.1rem
+        color $fontBlackColor
+        border 0.02rem solid #ccc
+        text-align center
+        border-radius 0.08rem
+        margin-right 0.2rem
+
+  .scroll-list
+    overflow hidden
+
+    .list-item
+      height 0.6rem
+      line-height 0.6rem
+      padding 0.1rem 0.6rem 0.1rem 0.2rem
 </style>
