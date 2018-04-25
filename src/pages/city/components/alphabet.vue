@@ -63,7 +63,6 @@ export default {
 
 <style lang="stylus" scoped>
 @import '~@css/varibles.styl'
-
 .list
   display flex
   position absolute
@@ -72,7 +71,6 @@ export default {
   width 0.6rem
   justify-content center
   flex-direction column
-
   li
     color $bgColor
     font-size 0.28rem

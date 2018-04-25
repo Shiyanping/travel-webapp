@@ -5,7 +5,7 @@
     </div>
     <div class="search-list" ref="search-list" v-show="keyword">
       <ul>
-        <li v-for="item of searchList" :key="item.id" class="border-bottom">
+        <li v-for="item of searchList" :key="item.id" class="border-bottom" @click="handleClickCity(item.name)">
           {{item.name}}
         </li>
         <li v-show="noDataShow">暂无相关数据</li>
@@ -16,6 +16,7 @@
 
 <script>
 import BScroll from 'better-scroll';
+import { mapMutations } from 'vuex';
 export default {
   name: 'search',
   props: {
@@ -38,6 +39,15 @@ export default {
       var element = this.$refs['search-list'];
       this.scroll = new BScroll(element);
     });
+  },
+  methods: {
+    ...mapMutations({
+      changeCity: 'changeCity'
+    }),
+    handleClickCity(name) {
+      this.changeCity(name);
+      this.$router.push('/');
+    }
   },
   watch: {
     keyword() {
@@ -68,12 +78,10 @@ export default {
 
 <style lang="stylus" scoped>
 @import '~@css/varibles.styl'
-
 .search
   height 0.72rem
   background $bgColor
   padding 0.1rem
-
   .search-input
     color $fontBlackColor
     width 100%
@@ -82,7 +90,6 @@ export default {
     height 100%
     text-align center
     border-radius 0.08rem
-
 .search-list
   position absolute
   background #eee
@@ -92,7 +99,6 @@ export default {
   right 0
   z-index 1
   overflow hidden
-
   li
     line-height 0.7rem
     height 0.7rem

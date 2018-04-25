@@ -17,7 +17,6 @@ export default {
 
 <style lang="stylus" scoped>
 @import '~@css/varibles.styl'
-
 .city-header
   position relative
   height $headerHeight
@@ -25,7 +24,6 @@ export default {
   color #ffffff
   text-align center
   background $bgColor
-
   .header-left
     position absolute
     top 0
@@ -33,7 +31,6 @@ export default {
     width 0.8rem
     text-align center
     height 100%
-
     .icon-fanhui
       font-size 0.36rem
       color #fff

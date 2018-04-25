@@ -50,34 +50,27 @@ export default {
 <style lang="stylus" scoped>
 @import '~@css/varibles.styl'
 @import '~@css/mixins.styl'
-
 .cate-content >>> .swiper-pagination-bullet-active
   background rgba(0, 175, 190, 0.8) !important
-
 .cate-content >>> .swiper-pagination-bullet
   width 6px
   height 6px
-
 .cate-content >>> .swiper-container
   height 100%
-
 .cate-content
   height 3.7rem
   padding-top 0.1rem
   background #fff
   overflow hidden
-
   .category-item
     float left
     width 25%
     height 1.3rem
     padding-top 0.3rem
     text-align center
-
     > img
       width 0.66rem
       height 0.66rem
-
     > p
       width 100%
       text-align center
