@@ -4,7 +4,7 @@
       <span class="iconfont icon-xin"></span> 猜你喜欢
     </div>
     <ul class="list">
-      <li class="item border-bottom" v-for="item of list" :key="item.id">
+      <li class="item border-bottom" v-for="item of list" :key="item.id" @click="openDetail(item)">
         <img :src="item.img" alt="">
         <div class="item-detail">
           <p class="item-title" v-text="item.name"></p>
@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
 export default {
   name: 'HomeRecommend',
   props: {
@@ -29,6 +30,14 @@ export default {
   },
   data() {
     return {};
+  },
+  methods: {
+    ...mapMutations(['changeDetailTitle']),
+    openDetail(item) {
+      console.log(item);
+      this.$router.push('/detail/' + item.id);
+      this.changeDetailTitle(item.name);
+    }
   }
 };
 </script>

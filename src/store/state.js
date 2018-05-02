@@ -7,5 +7,6 @@ try {
 } catch (e) {}
 
 export default {
-  city: defaultCity
+  city: defaultCity,
+  detailTitle: '北京野生动物园'
 };

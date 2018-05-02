@@ -1,10 +1,12 @@
-# travel-webapp
+# 一个旅行类webapp
 
-> A Vue.js project
+> 基于vue，vuex，vue-router写的一个旅行类webapp
 
-## Build Setup
+## 启动方式及build
 
 ``` bash
+git clone https://github.com/Shiyanping/travel-webapp.git
+
 # install dependencies
 npm install
 
@@ -13,9 +15,8 @@ npm run dev
 
 # build for production with minification
 npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+::: tips 后续补充
+项目只是写了一个大概的框架，欠缺的还有很多，后续慢慢补充
+:::

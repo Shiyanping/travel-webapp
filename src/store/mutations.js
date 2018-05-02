@@ -4,5 +4,8 @@ export default {
     try {
       localStorage.city = city;
     } catch (e) {}
+  },
+  changeDetailTitle(state, name) {
+    state.detailTitle = name;
   }
 };
