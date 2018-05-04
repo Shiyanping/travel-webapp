@@ -22,7 +22,6 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
 export default {
   name: 'HomeRecommend',
   props: {
@@ -32,11 +31,8 @@ export default {
     return {};
   },
   methods: {
-    ...mapMutations(['changeDetailTitle']),
     openDetail(item) {
-      console.log(item);
       this.$router.push('/detail/' + item.id);
-      this.changeDetailTitle(item.name);
     }
   }
 };

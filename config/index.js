@@ -16,7 +16,8 @@ module.exports = {
         changeOrigin: true,
         pathRewrite: {
           '/api/indexInfo': '/static/mock/index.json',
-          '/api/city': '/static/mock/city.json'
+          '/api/city': '/static/mock/city.json',
+          '/api/detail': '/static/mock/detail.json'
         }
       },
     },

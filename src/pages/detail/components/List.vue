@@ -2,7 +2,7 @@
   <div>
     <div v-for="(item, $index) of list" :key="$index">
       <div class="list-item border-bottom">
-        <p class="item-title">{{item.name}}</p>
+        <p class="item-title">{{item.title}}</p>
         <p class="item-price" v-if="item.price">{{item.price}}</p>
       </div>
       <div v-if="item.children" class="list-children">

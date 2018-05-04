@@ -3,7 +3,7 @@
     <swiper :options="swiperOption" ref="mySwiper" v-if="showSwiper">
       <!-- slides -->
       <swiper-slide v-for="item of list" :key="item.id">
-        <img class="swiper-img" :src="item.imgUrl" alt="">
+        <img class="swiper-img" :src="item.imgUrl" alt="" @click="openDetail(item)">
       </swiper-slide>
       <!-- Optional controls -->
       <div class="swiper-pagination" slot="pagination"></div>
@@ -30,6 +30,11 @@ export default {
   computed: {
     showSwiper() {
       return this.list.length;
+    }
+  },
+  methods: {
+    openDetail(item) {
+      this.$router.push('/detail/' + item.id);
     }
   }
 };

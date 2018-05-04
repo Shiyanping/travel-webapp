@@ -1,34 +1,31 @@
 <template>
   <div>
     <div class="banner" @click="handleClickBanner">
-      <img src="http://img1.qunarzz.com/sight/p0/1507/36/ce3d2d6c9ab44d67ae68d940b8781829.water.jpg_600x330_f68eb231.jpg" alt="">
+      <img :src="bannerImg" alt="">
       <div class="banner-img-num">
-        <span class="iconfont icon-tupian"></span> 11
+        <span class="iconfont icon-tupian"></span> {{gallaryImgs.length}}
       </div>
-      <div class="banner-title">{{detailTitle}}(AAAA景区)</div>
+      <div class="banner-title">{{title}}</div>
     </div>
-    <common-gallery :imgList="bannerList" v-show="showGallery" @closeGallery="handleCloseGallery"></common-gallery>
+    <common-gallery :imgList="gallaryImgs" v-show="showGallery" @closeGallery="handleCloseGallery"></common-gallery>
   </div>
 </template>
 
 <script>
 import CommonGallery from '@commons/gallery/Gallery';
-import { mapState } from 'vuex';
 export default {
   name: 'detailBanner',
+  props: {
+    bannerImg: String,
+    gallaryImgs: Array,
+    title: String
+  },
   components: {
     CommonGallery
   },
-  computed: {
-    ...mapState(['detailTitle'])
-  },
   data() {
     return {
-      showGallery: false,
-      bannerList: [
-        'http://img1.qunarzz.com/sight/p0/1501/7d/bf80dd42eea3649a9fcb126bc9b594ba.water.jpg_r_800x800_8d93aab4.jpg',
-        'http://img1.qunarzz.com/sight/p0/1507/cc/19733fc0135062788140cbb48ae606a7.water.jpg_r_800x800_6129f4dd.jpg'
-      ]
+      showGallery: false
     };
   },
   methods: {
