@@ -22,6 +22,7 @@ export default new Router({
       path: '/detail/:id',
       name: 'Detail',
       component: Detail
+      // component: resolve => require(['@/view/index/index'], resolve)  // 懒加载
     }
   ],
   scrollBehavior(to, from, savedPosition) {
